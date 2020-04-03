@@ -8,6 +8,7 @@ enable_testing()
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 set(CMAKE_C_EXTENSIONS OFF)
+set(CMAKE_BUILD_TYPE Debug)
 
 message("Generated with config types: ${CMAKE_CONFIGURATION_TYPES}")
 
@@ -18,7 +19,7 @@ IF(CMAKE_BUILD_TYPE MATCHES Debug)
 ENDIF()
 
 
-add_library(electionguard
+add_library(electionguard SHARED
     ${PROJECT_SOURCE_DIR}/src/electionguard/api/base_hash.c
     ${PROJECT_SOURCE_DIR}/src/electionguard/api/filename.c
     ${PROJECT_SOURCE_DIR}/src/electionguard/api/create_election.c
